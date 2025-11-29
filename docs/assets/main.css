@@ -25,7 +25,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url('{{ site.baseurl }}/images/under_construction.png') no-repeat center center/cover;
+  background: url('/docs/images/under_construction.png') no-repeat center center/cover;
   z-index: -2;
 }
 
@@ -124,3 +124,4 @@ body::before {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
 }
+
