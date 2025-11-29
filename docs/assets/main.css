@@ -4,16 +4,7 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  color: white;
-  overflow-x: hidden;
-}
-
-body,
-html {
+body,html {
   height: 100%;
   font-family: Arial, sans-serif;
   color: white;
@@ -28,8 +19,6 @@ body::before {
   background: url('images/under_construction.png') no-repeat center center/cover;
   z-index: -2;
 }
-
-
 
 /* Top bar (always visible) */
 .top-bar {
@@ -124,7 +113,3 @@ body::before {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
 }
-
-
-
-
