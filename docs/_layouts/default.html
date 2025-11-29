@@ -13,10 +13,11 @@
 
 </head>
 <body>
-
-  {% include topbar.html %}
-  {% include sidebar.html %}
-
+  {% unless page.no_menu %}
+    {% include topbar.html %}
+    {% include sidebar.html %}
+  {% endunless %}
+  
   <main style="padding-top: 80px;">
     {{ content }}
   </main>
@@ -24,3 +25,4 @@
   <script src="/assets/menu.js"></script>
 </body>
 </html>
+
