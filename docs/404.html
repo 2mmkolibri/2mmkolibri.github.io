@@ -1,13 +1,49 @@
----
-layout: default
-title: Page Not Found
-no_menu: true
----
 <style>
-  body::before {
-    background: url('images/404.png') no-repeat center center/cover;
-  }
+/* Full-page container */
+.error-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Background image + overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('{{ site.baseurl }}/images/404-bg.png') no-repeat center center/cover;
+  filter: blur(2px);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* Link styling */
+.error-container a {
+  position: absolute;
+  top: 55%;    /* adjust this to move vertically */
+  left: 50%;   /* centers horizontally */
+  transform: translate(-50%, -50%);
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.error-container a:hover {
+  background: rgba(255,255,255,0.2);
+}
 </style>
-<a href="{{ site.baseurl }}/">Go back home</a>
 
-
+<div class="error-container">
+  <a href="{{ site.baseurl }}/">Go home</a>
+</div>
