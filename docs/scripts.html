@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP-218/Scripts</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Background image */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('images/under_construction.png') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    /*body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }*/
+
+    /* Top bar (always visible) */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(0, 0, 0);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 900;
+    }
+
+    .top-bar .logo {
+      margin-left: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Burger menu (for top bar + sidebar) */
+    .menu-toggle {
+      width: 40px;
+      height: 28px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 6px;
+      background: white;
+      border-radius: 1px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      height: 100%;
+      width: 300px;
+      background: #111; /* solid, not see-through */
+      transition: left 0.3s ease;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    /* Sidebar header (burger + logo inside sidebar) */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: #000;
+      height: 80px;
+    }
+
+    .sidebar-header .logo {
+      margin-left: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .sidebar ul li {
+      padding: 15px 20px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.2s ease;
+      display: block;
+    }
+
+    .sidebar ul li a:hover {
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+    }
+
+    /* Centered text */
+    .center-text {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .center-text h1 {
+      font-size: 4rem;
+      margin-bottom: 100px;
+    }
+
+    .center-text h2 {
+      font-size: 2.5rem;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar with burger + title -->
+  <div class="top-bar">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo">HTTP-218</div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="menu-toggle" id="menu-toggle-close">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="logo">HTTP-218</div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="scripts.html">Scripts</a></li>
+      <li><a href="comics.html">Comics</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuToggleClose = document.getElementById("menu-toggle-close");
+    const sidebar = document.getElementById("sidebar");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.add("active");
+    });
+
+    menuToggleClose.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
