@@ -31,9 +31,9 @@ body::after {
 
 /* Plain text link positioned over background */
 .error-container a {
-  position: absolute;
-  top: 45%;    /* adjust this to move vertically */
-  left: 30%;   /* centers horizontally */
+  position: fixed;
+  top: 42%;    /* adjust this to move vertically */
+  left: 40%;   /* centers horizontally */
   transform: translate(-50%, -50%);
   color: white; /* link color */
   text-decoration: underline; /* optional */
@@ -43,5 +43,6 @@ body::after {
 <div class="error-container">
   <a href="{{ site.baseurl }}/">Go back home</a>
 </div>
+
 
 
