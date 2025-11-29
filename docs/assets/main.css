@@ -25,7 +25,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url('images/under_construction.png') no-repeat center center/cover;
+  background: url('{{ site.baseurl }}/images/under_construction.png') no-repeat center center/cover;
   z-index: -2;
 }
 
