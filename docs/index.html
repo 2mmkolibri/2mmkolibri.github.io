@@ -1,6 +1,20 @@
 ---
 layout: default
 title: Home
+background: url('/images/http-218-home.png') no-repeat center center/cover;
+filter: blur(3px);
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
 ---
 
-<h1>Welcome</h1>
+  <!-- Center Text -->
+  <div class="center-text">
+    <h1>My terrible code on display for the whole world to see.</h1><br>
+    <h2>This is fine.</h2>
+  </div>
