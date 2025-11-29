@@ -1,22 +1,37 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: Arial, sans-serif;
   color: white;
   overflow-x: hidden;
 }
 
-/* Background image (can be overridden per page) */
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Background image + blur overlay */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url('/images/default-bg.png') no-repeat center center/cover;
+  background: url('images/under_construction.png') no-repeat center center/cover;
   z-index: -2;
 }
 
-/* top bar */
+
+
+/* Top bar (always visible) */
 .top-bar {
   position: fixed;
   top: 0;
@@ -30,13 +45,13 @@ body::before {
   z-index: 900;
 }
 
-.logo {
+.top-bar .logo {
+  margin-left: 20px;
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 20px;
 }
 
-/* burger */
+/* Burger menu (for top bar + sidebar) */
 .menu-toggle {
   width: 40px;
   height: 28px;
@@ -53,14 +68,15 @@ body::before {
   border-radius: 1px;
 }
 
-/* sidebar */
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   left: -300px;
-  width: 300px;
   height: 100%;
+  width: 300px;
   background: #111;
+  /* solid, not see-through */
   transition: left 0.3s ease;
   z-index: 1001;
   display: flex;
@@ -71,12 +87,19 @@ body::before {
   left: 0;
 }
 
+/* Sidebar header (burger + logo inside sidebar) */
 .sidebar-header {
-  height: 80px;
-  padding: 20px;
   display: flex;
   align-items: center;
+  padding: 20px;
   background: #000;
+  height: 80px;
+}
+
+.sidebar-header .logo {
+  margin-left: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .sidebar ul {
@@ -90,8 +113,14 @@ body::before {
 }
 
 .sidebar ul li a {
-  color: white;
   text-decoration: none;
+  color: white;
   font-size: 18px;
+  transition: color 0.2s ease;
   display: block;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
 }
