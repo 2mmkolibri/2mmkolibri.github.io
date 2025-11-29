@@ -2,7 +2,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url('/images/http-218-home.png') no-repeat center center/cover;
+    background: url('docs/images/http-218-home.png') no-repeat center center/cover;
     filter: blur(3px);
     z-index: -2;
 }
@@ -34,5 +34,6 @@ body::after {
     opacity: 0.9;
     line-height: 1.4;
 }
+
 
 
