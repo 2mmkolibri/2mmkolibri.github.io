@@ -21,28 +21,22 @@ body::before {
   z-index: -2;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
-
 /* Plain text link positioned over background */
 .error-container a {
   position: fixed;
-  top: 52%;    /* adjust this to move vertically */
+  top: 48%;    /* adjust this to move vertically */
   left: 40%;   /* centers horizontally */
   transform: translate(-50%, -50%);
   color: white; /* link color */
   text-decoration: underline; /* optional */
+  font-size: 2rem;
 }
 </style>
 
 <div class="error-container">
   <a href="{{ site.baseurl }}/">Go back home</a>
 </div>
+
 
 
 
